@@ -1,0 +1,35 @@
+#################### RESOLUÇÃO DE ERRO KERNEL HEADER NO MOMENTO DE ABRIR O SOFTWARE ####################
+
+1. sudo apt update
+
+2. sudo apt install linux-headers-$(uname -r) build-essential
+
+
+
+
+
+OBS: Quando o vmware mostrar o erro abaixo, pode ser usada a solução descrita acima.
+
+
+before you can run vmware, several modules must be compiled and loaded into the running kernel
+
+
+kernel headers for version 6.12.57+deb13-amd64 were not found. If you installed them in a non-default path you can specify the path below. Otherwise refer to your distribution's documentation for instalation instructions and click refresh to search again in default locations
+
+
+
+# Explicação: Este problema acontece devido ao problema de atualização do kernel em sistemas linux, porém uma uma simples atualização "sudo apt update && apt upgrade", o gerenciador de pacotes não atualiza da mesma forma o cabeçalho com as informações do kernel novo, por este motivo é necessário utilizar os comandos acima para baixar o novo header e após isso recompliar os módilos para o uso do vmware.
+
+
+
+#################### RESOLUÇÃO 2 - INSTALAR O DKMS E ATUALIZAR AUTOMATICAMENTE OS HEADERS DO NOVO KERNEL ###################
+
+1. sudo apt update
+
+2. sudo apt install dkms
+
+
+
+# Explicação: após instalar este pacote, os headers do kernel serão atualizados para a versão vigente do kernel automaticamente, e quando o vmware for compilar os módulos tudo será feito sem maiores problemas, tendo em vista que os headers e os utilitários para compilação já estrão disponiveis para utilização imediata.
+
+
