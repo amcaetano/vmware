@@ -1,0 +1,15 @@
+####################################################################################
+########################## INSTALACAO DO VMWARE WORKSTATION ########################
+####################################################################################
+
+1. Acessar o site da broadcom, logar com seus dados, e baixar o vmware workstation pro para linux com o arquivo no formato .bundle
+
+2. Instalar pacotes para compilacao do vmware para a versao do kernel utilizado pelo o sistema operacional host, usando o comando abaixo:
+
+==> sudo apt update 
+==> sudo apt install linux-headers-$(uname -r) build-essential
+
+3.acessar o diretorio onde o arquivo .bundle foi baixado e executar o comando abaixo:
+
+==> sudo ./vmwareworkstationpro.bundle
+ 
